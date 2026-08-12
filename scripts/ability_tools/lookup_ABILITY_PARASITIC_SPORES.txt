@@ -1,0 +1,108 @@
+Lookup results for ABILITY_PARASITIC_SPORES
+============================================================
+
+
+### ABILITIES.CC ###
+333-};
+334-
+335:constexpr Ability Drizzle = {
+336-    .onEntry = +[](ON_ENTRY) -> int {
+337-        if (TryChangeBattleWeather(battler, ENUM_WEATHER_RAIN, TRUE)) {
+338:            BattleScriptPushCursorAndCallback(BattleScript_DrizzleActivates);
+339-            return TRUE;
+340-        } else if (gBattleWeather & WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT) {
+341-            BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+342-            return NO_ANNOUNCE;
+343-        }
+344-        return FALSE;
+345-    },
+346-};
+347-
+348-constexpr Ability SpeedBoost = {
+--
+5346-
+5347-constexpr Ability Seaborne = {
+5348:    .onEntry = Drizzle.onEntry,
+5349-    .onStat = SwiftSwim.onStat,
+5350-};
+5351-
+5352-constexpr Ability HighTide = {
+5353-    .onAttacker = +[](ON_ATTACKER) -> int {
+5354-        CHECK(moveType == TYPE_WATER)
+5355-        CHECK(AdjustFollowupMoveTarget(battler, &target, move, FOLLOWUP_STANDARD))
+5356-
+5357-        return UseAttackerFollowUpMove(battler, target, ability, MOVE_SURF, 50);
+5358-    },
+--
+8726-constexpr Ability Supercell = {
+8727-    .onEntry = +[](ON_ENTRY) -> int {
+8728:        return ElectricSurge.onEntry(DELEGATE_ENTRY) | Drizzle.onEntry(DELEGATE_ENTRY);
+8729-    },
+8730-};
+8731-
+8732-constexpr Ability LightningAspect = {
+8733-    .onAbsorb = +[](ON_ABSORB) -> int {
+8734-        CHECK(moveType == TYPE_ELECTRIC)
+8735-        *statId = GetHighestAttackingStatId(battler, TRUE);
+8736-        return ABSORB_RESULT_STAT;
+8737-    },
+8738-    .breakable = TRUE,
+--
+8747-    {ABILITY_NONE, None},
+8748-    {ABILITY_STENCH, Stench},
+8749:    {ABILITY_DRIZZLE, Drizzle},
+8750-    {ABILITY_SPEED_BOOST, SpeedBoost},
+8751-    {ABILITY_BATTLE_ARMOR, BattleArmor},
+8752-    {ABILITY_STURDY, Sturdy},
+8753-    {ABILITY_DAMP, Damp},
+8754-    {ABILITY_LIMBER, Limber},
+8755-    {ABILITY_SAND_VEIL, SandVeil},
+8756-    {ABILITY_STATIC, Static},
+8757-    {ABILITY_VOLT_ABSORB, VoltAbsorb},
+8758-    {ABILITY_WATER_ABSORB, WaterAbsorb},
+8759-    {ABILITY_OBLIVIOUS, Oblivious},
+--
+9321-    {ABILITY_TERA_SHELL, TeraShell},
+9322-    {ABILITY_TOXIC_CHAIN, ToxicChain},
+9323:    {ABILITY_PARASITIC_SPORES, ParasiticSpores},
+9324-    {ABILITY_POISON_PUPPETEER, PoisonPuppeteer},
+9325-    {ABILITY_ENTRANCE, Entrance},
+9326-    {ABILITY_REJECTION, Rejection},
+9327-    {ABILITY_APPLE_ENLIGHTENMENT, AppleEnlightenment},
+9328-    {ABILITY_BALLOON_BOMBER, BalloonBomber},
+9329-    {ABILITY_FLAMING_MAW, FlamingMaw},
+9330-    {ABILITY_DEMOLITIONIST, Demolitionist},
+9331-    {ABILITY_ROCKHARD_WILL, RockhardWill},
+9332-    {ABILITY_FRAGRANT_DAZE, FragrantDaze},
+9333-    {ABILITY_LOW_VISIBILITY, LowVisibility},
+
+----------------------------------------
+
+### BATTLE SCRIPTS ###
+src/battle_ai_ability.c:782:        case ABILITY_PARASITIC_SPORES:
+src/battle_util.c:8887:        gBattleScripting.abilityPopupOverwrite = ABILITY_PARASITIC_SPORES;
+src/battle_util.c:8892:        if (BATTLER_HAS_ABILITY(battler, ABILITY_PARASITIC_SPORES)) BattleScriptCall(BattleScript_AbilityPopUp);
+
+----------------------------------------
+
+### ABILITY ENUM ###
+615:#define ABILITY_PARASITIC_SPORES 609
+1488:    ABILITY_PARASITIC_SPORES = 609,
+
+----------------------------------------
+
+### PROTO DEFINITION ###
+3050:  id: ABILITY_PARASITIC_SPORES
+3051-  name: "Parasitic Spores"
+3052-  description: "Deals 1/8 HP damage to non-Ghost. Spreads on contact."
+3053-}
+3054-ability {
+3055-  id: ABILITY_POISON_PUPPETEER
+
+----------------------------------------
+
+### ABILITY HANDLERS ###
+6392:        return SwitchInAnnounce(B_MSG_SWITCHIN_PARASITIC_SPORES);
+9323:    {ABILITY_PARASITIC_SPORES, ParasiticSpores},
+
+----------------------------------------

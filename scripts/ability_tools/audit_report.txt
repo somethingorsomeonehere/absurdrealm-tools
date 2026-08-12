@@ -1,0 +1,87 @@
+# Ability Files Audit Report
+
+Total files audited: 67
+Correct files: 64
+Files with issues: 3
+
+## Issues Found
+
+**15_drizzle.md**
+- Type: wrong_filename_id
+- Issue: Filename ID 15 should be 2
+- Correct filename: 2_drizzle.md
+
+**15_drizzle.md**
+- Type: wrong_content_id
+- Issue: Content ID 15 should be 2
+
+**568_mind_crunch.md**
+- Type: unknown_ability
+- Issue: Ability name "MIND_CRUNCH" not found in mapping
+
+## Correct Files
+
+- 104_mold_breaker.md
+- 109_unaware.md
+- 117_snow_warning.md
+- 125_sheer_force.md
+- 126_contrary.md
+- 144_regenerator.md
+- 147_wonder_skin.md
+- 176_stance_change.md
+- 178_mega_launcher.md
+- 189_primordial_sea.md
+- 190_desolate_land.md
+- 191_delta_stream.md
+- 223_power_of_alchemy.md
+- 226_electric_surge.md
+- 227_psychic_surge.md
+- 229_grassy_surge.md
+- 22_intimidate.md
+- 241_gulp_missile.md
+- 256_neutralizing_gas.md
+- 26_levitate.md
+- 273_power_fists.md
+- 288_perfectionist.md
+- 302_coil_up.md
+- 313_dragonslayer.md
+- 334_bad_luck.md
+- 341_fort_knox.md
+- 354_weather_control.md
+- 372_momentum.md
+- 373_grip_pincer.md
+- 384_low_blow.md
+- 3_speed_boost.md
+- 427_cheating_death.md
+- 428_cheap_tactics.md
+- 455_archmage.md
+- 45_sand_stream.md
+- 464_hunters_horn.md
+- 47_thick_fat.md
+- 505_mystic_blades.md
+- 508_pure_love.md
+- 515_retriever.md
+- 522_early_grave.md
+- 534_cosmic_daze.md
+- 546_salt_circle.md
+- 551_impulse.md
+- 556_subdue.md
+- 577_sharing_is_caring.md
+- 583_gallantry.md
+- 598_malicious.md
+- 59_forecast.md
+- 601_mythical_arrows.md
+- 602_lawnmower.md
+- 609_parasitic_spores.md
+- 622_beautiful_music.md
+- 634_last_stand.md
+- 640_rhythmic.md
+- 644_ice_cold_hunter.md
+- 70_drought.md
+- 715_hover.md
+- 735_know_your_place.md
+- 742_magical_fists.md
+- 743_cutthroat.md
+- 751_energized_horns.md
+- 85_heatproof.md
+- 86_simple.md

@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+*.log
+.env
+.env.local
+docs/.env
+docs/.env.local
+docs/.vitepress/theme/config.local.js
+
+# Ignore copied ability files (except index.md)
+docs/abilities/*.md
+!docs/abilities/index.md

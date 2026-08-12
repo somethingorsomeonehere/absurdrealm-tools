@@ -1,0 +1,378 @@
+/* Theme-neutral variables */
+:root {
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.16);
+  
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #646cff 30%, #747bff);
+  
+  /* UI Component colors */
+  --vp-c-success: #10b981;
+  --vp-c-success-dimm: rgba(16, 185, 129, 0.16);
+  --vp-c-green: #10b981;
+  --vp-c-green-dimm: rgba(16, 185, 129, 0.16);
+  
+  --vp-c-danger: #ef4444;
+  --vp-c-danger-dark: #dc2626;
+  --vp-c-danger-dimm: rgba(239, 68, 68, 0.16);
+  
+  --vp-c-warning: #f59e0b;
+  --vp-c-warning-dimm: rgba(245, 158, 11, 0.16);
+  
+  --vp-c-gray: #6b7280;
+  --vp-c-gray-soft: #e5e7eb;
+  
+  --vp-c-white: #ffffff;
+}
+
+/* Light theme variables */
+:root:not(.dark) {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f9f9f9;
+  --vp-c-bg-mute: #f1f1f1;
+  --vp-c-bg-alt: #f6f6f6;
+  
+  --vp-c-divider: #e2e2e3;
+  --vp-c-divider-light: #e2e2e3;
+  
+  --vp-c-text-1: #213547;
+  --vp-c-text-2: #476582;
+  --vp-c-text-3: #7c7c7c;
+}
+
+/* Dark theme variables */
+.dark {
+  --vp-c-bg: #0f0f0f;
+  --vp-c-bg-soft: #1a1a1a;
+  --vp-c-bg-mute: #202020;
+  --vp-c-bg-alt: #161616;
+  
+  --vp-c-divider: #2e2e2e;
+  --vp-c-divider-light: #363636;
+  
+  --vp-c-text-1: #e1e1e1;
+  --vp-c-text-2: #b8b8b8;
+  --vp-c-text-3: #8e8e8e;
+  
+  /* Dark theme gray overrides */
+  --vp-c-gray: #9ca3af;
+  --vp-c-gray-soft: #374151;
+}
+
+/* Better mobile experience */
+@media (max-width: 768px) {
+  .VPNav {
+    background: var(--vp-c-bg);
+  }
+  
+  .VPSidebar {
+    background: var(--vp-c-bg-soft);
+  }
+}
+
+/* Search enhancement - applies to both themes via CSS variables */
+.VPLocalSearchBox {
+  --vp-local-search-bg: var(--vp-c-bg-soft);
+  --vp-local-search-result-bg: var(--vp-c-bg-mute);
+  --vp-local-search-result-border: var(--vp-c-divider);
+}
+
+/* Code blocks - light theme */
+:root:not(.dark) .vp-code {
+  background-color: #f6f8fa !important;
+}
+
+:root:not(.dark) pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Code blocks - dark theme */
+.dark .vp-code,
+.dark .vp-code-dark {
+  background-color: #161616 !important;
+}
+
+.dark pre {
+  background-color: #161616 !important;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-divider);
+  padding: 12px;
+}
+
+td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 12px;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Improve readability */
+.vp-doc p {
+  line-height: 1.7;
+}
+
+.vp-doc h1, .vp-doc h2, .vp-doc h3 {
+  margin-top: 2rem;
+}
+
+/* Card-like sections */
+.vp-doc blockquote {
+  background-color: var(--vp-c-bg-soft);
+  border-left-color: var(--vp-c-brand);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Status indicators in sidebar */
+.VPSidebarItem .text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Add subtle hover effect to all sidebar items */
+.VPSidebarItem > .item {
+  border-radius: 6px;
+  margin: 1px 8px;
+}
+
+.VPSidebarItem:not(.is-active) > .item:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Completed abilities (green checkmark) */
+.VPSidebarItem .text:has(✅) {
+  color: var(--vp-c-text-1);
+}
+
+/* Needs review abilities (orange circle) */
+.VPSidebarItem .text:has(🟠) {
+  color: var(--vp-c-text-2);
+}
+
+/* Status badge styling */
+.status-complete {
+  color: #4CAF50;
+}
+
+.status-needs-review {
+  color: #FF9800;
+}
+
+.status-pending {
+  color: #9E9E9E;
+}
+
+/* Enhanced active sidebar item styling - Clean modern design */
+.VPSidebarItem.is-active > .item {
+  position: relative;
+  margin: 3px 10px 3px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* Create the left accent bar */
+.VPSidebarItem.is-active > .item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--vp-c-brand);
+}
+
+/* Light theme active item */
+:root:not(.dark) .VPSidebarItem.is-active > .item {
+  background: linear-gradient(to right, 
+    rgba(100, 108, 255, 0.1) 0%, 
+    rgba(100, 108, 255, 0.05) 100%);
+  box-shadow: 0 1px 4px rgba(100, 108, 255, 0.1);
+}
+
+/* Dark theme active item */
+.dark .VPSidebarItem.is-active > .item {
+  background: linear-gradient(to right, 
+    rgba(100, 108, 255, 0.18) 0%, 
+    rgba(100, 108, 255, 0.08) 100%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover state for active items */
+:root:not(.dark) .VPSidebarItem.is-active > .item:hover {
+  background: linear-gradient(to right, 
+    rgba(100, 108, 255, 0.15) 0%, 
+    rgba(100, 108, 255, 0.08) 100%);
+}
+
+.dark .VPSidebarItem.is-active > .item:hover {
+  background: linear-gradient(to right, 
+    rgba(100, 108, 255, 0.22) 0%, 
+    rgba(100, 108, 255, 0.1) 100%);
+}
+
+/* Active item text - keep it clean */
+.VPSidebarItem.is-active .text {
+  color: var(--vp-c-text-1);
+  position: relative;
+}
+
+/* Ensure proper spacing for the link text */
+.VPSidebarItem.is-active > .item .link {
+  padding-left: 16px;
+  padding-right: 12px;
+}
+
+
+/* Ensure scrollbar is visible in sidebar for better UX */
+.VPSidebar .content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
+
+.VPSidebar .content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.VPSidebar .content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.VPSidebar .content::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 3px;
+}
+
+.VPSidebar .content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vp-c-divider-light);
+}
+/* Keyboard hints styling */
+.editor-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-kbd {
+  background-color: var(--vp-c-gray-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-left: 4px;
+  color: var(--vp-c-text-1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Make the kbd stand out in primary button */
+.editor-button.primary .button-kbd {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--vp-c-brand-dark);
+}
+
+/* Dark theme adjustments */
+.dark .editor-button.primary .button-kbd {
+  background-color: var(--vp-c-bg);
+  border-color: var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+}
+
+/* ===== Real-time Status Updates ===== */
+
+/* Sidebar item transitions */
+.VPSidebarItem a {
+  transition: all 0.3s ease;
+}
+
+/* Pending status indicator - DISABLED 
+.VPSidebarItem a[data-pending="true"] {
+  position: relative;
+  opacity: 0.85;
+}
+
+.VPSidebarItem a[data-pending="true"]::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--vp-c-warning);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+} */
+
+/* Just updated animation */
+.VPSidebarItem a.ability-just-updated {
+  animation: highlightUpdate 0.6s ease-out;
+}
+
+@keyframes highlightUpdate {
+  0% {
+    background-color: rgba(100, 108, 255, 0.25);
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    background-color: transparent;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+/* Multi-user activity indicator - DISABLED
+.activity-indicator {
+  transition: all 0.3s ease-out;
+} */
+
+/* Status-specific text colors */
+.VPSidebarItem a[data-ability-status="reviewed"] .text {
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebarItem a[data-ability-status="written"] .text {
+  color: var(--vp-c-text-2);
+}
+
+.VPSidebarItem a[data-ability-status="pending"] .text {
+  color: var(--vp-c-text-3);
+}
+
+/* Ensure checkmarks are visible in both themes */
+.VPSidebarItem .text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Elite Redux Versioning"
+  short_description: "Update Elite Redux version text safely"
+  default_prompt: "Use $eliteredux-versioning to update Elite Redux version strings consistently across the ROM."

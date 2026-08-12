@@ -1,0 +1,26 @@
+{
+  "name": "elite-redux-ability-codex",
+  "version": "1.0.0",
+  "description": "Elite Redux Ability Codex - Comprehensive ability documentation",
+  "scripts": {
+    "predev": "node scripts/copy-abilities.js && python3 ../scripts/ability_tools/generate_status_api.py",
+    "dev": "vitepress dev docs",
+    "prebuild": "node scripts/copy-abilities.js && python3 ../scripts/ability_tools/generate_status_api.py",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "copy-abilities": "node scripts/copy-abilities.js",
+    "generate-status": "python3 ../scripts/ability_tools/generate_status_api.py"
+  },
+  "dependencies": {
+    "@codemirror/lang-markdown": "^6.2.4",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "codemirror": "^6.0.1",
+    "diff": "^5.1.0",
+    "dotenv": "^17.0.0",
+    "gray-matter": "^4.0.3",
+    "vue-codemirror": "^6.1.1"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.31"
+  }
+}
