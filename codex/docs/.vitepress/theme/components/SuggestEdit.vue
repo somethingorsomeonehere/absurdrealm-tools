@@ -71,7 +71,7 @@ onMounted(() => {
 })
 
 function createGitHubIssue() {
-  const repoUrl = 'https://github.com/Elite-Redux/eliteredux-source'
+  const repoUrl = 'https://github.com/somethingorsomeonehere/absurdrealm-source'
   
   // Use the ability review issue template with pre-filled data
   const params = new URLSearchParams({

@@ -335,7 +335,7 @@ async function loadOriginalContent() {
     let content = ''
     
     // Method 1: Try to fetch from the source repository (GitHub raw)
-    const githubRawUrl = `https://raw.githubusercontent.com/darkyy92/eliteredux-darky/main/knowledge/abilities/${abilityInfo.value.filename}.md`
+    const githubRawUrl = `https://raw.githubusercontent.com/somethingorsomeonehere/absurdrealm-tools/main/knowledge/abilities/${abilityInfo.value.filename}.md`
     
     try {
       const response = await fetch(githubRawUrl)
@@ -417,7 +417,7 @@ function resetContent() {
 function submitToGitHub() {
   if (!hasChanges.value || !isValidContent.value) return
   
-  const repoUrl = 'https://github.com/darkyy92/eliteredux-darky'
+  const repoUrl = 'https://github.com/somethingorsomeonehere/absurdrealm-tools'
   
   // Create issue body with diff
   const diffText = Diff.createPatch(
@@ -467,7 +467,7 @@ These changes were made using the Elite Redux Ability Codex inline editor.
 }
 
 function createSimpleIssue() {
-  const repoUrl = 'https://github.com/darkyy92/eliteredux-darky'
+  const repoUrl = 'https://github.com/somethingorsomeonehere/absurdrealm-tools'
   
   const params = new URLSearchParams({
     template: 'ability-review.yml',

@@ -10,7 +10,7 @@ import glob
 
 def load_correct_mapping():
     """Load the correct ability mapping"""
-    mapping_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/scripts/ability_tools/ability_id_mapping.txt"
+    mapping_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/scripts/ability_tools/ability_id_mapping.txt"
     
     id_to_name = {}
     name_to_id = {}
@@ -29,7 +29,7 @@ def load_correct_mapping():
 
 def audit_individual_files():
     """Audit all individual ability files"""
-    abilities_dir = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/abilities"
+    abilities_dir = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/abilities"
     
     # Get all ability files (excluding README)
     pattern = os.path.join(abilities_dir, "*_*.md")
@@ -147,7 +147,7 @@ def main():
         print(f"  {issue_type}: {len(type_issues)} files")
     
     # Save detailed report
-    report_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/scripts/ability_tools/audit_report.txt"
+    report_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/scripts/ability_tools/audit_report.txt"
     with open(report_path, 'w') as f:
         f.write("# Ability Files Audit Report\n\n")
         f.write(f"Total files audited: {len(correct_files) + len(issues)}\n")

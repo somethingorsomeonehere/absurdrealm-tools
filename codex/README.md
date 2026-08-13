@@ -49,7 +49,7 @@ A modern, searchable documentation website for all Elite Redux abilities.
 3. The site will automatically deploy when you push to the main branch. The GitHub Action will:
    - Build the VitePress site
    - Deploy to GitHub Pages
-   - Make it available at: https://darkyy92.github.io/eliteredux-darky/
+   - Make it available at: https://somethingorsomeonehere.github.io/absurdrealm-tools/
 
 ## Adding New Abilities
 
@@ -62,7 +62,7 @@ Simply add new `.md` files to the `knowledge/abilities/` folder. The site will a
 ## File Structure
 
 ```
-eliteredux-darky/
+absurdrealm-tools/
 ├── knowledge/
 │   └── abilities/      # Your ability markdown files
 └── codex/              # Website code

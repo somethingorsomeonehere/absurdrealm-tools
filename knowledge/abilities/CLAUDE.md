@@ -69,7 +69,7 @@ Remove these and move content under "Detailed Mechanical Explanation":
 echo "description text here" | wc -c
 
 # Check current progress
-grep -l "Ability ID" eliteredux-darky/knowledge/abilities/*.md | wc -l
+grep -l "Ability ID" absurdrealm-tools/knowledge/abilities/*.md | wc -l
 ```
 
 ## Reference Template

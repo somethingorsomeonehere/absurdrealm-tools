@@ -5,7 +5,7 @@ import re
 
 def update_progress():
     # Read the progress file
-    with open('/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/extended_ability_descriptions/progress.md', 'r') as f:
+    with open('/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/extended_ability_descriptions/progress.md', 'r') as f:
         content = f.read()
     
     # List of completed ability IDs
@@ -24,7 +24,7 @@ def update_progress():
     content = re.sub(r'Completed: \d+', f'Completed: {completed_count}', content)
     
     # Write back the updated content
-    with open('/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/extended_ability_descriptions/progress.md', 'w') as f:
+    with open('/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/extended_ability_descriptions/progress.md', 'w') as f:
         f.write(content)
     
     print(f"Updated progress.md - marked {len(completed_ids)} abilities as completed")

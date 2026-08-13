@@ -8,7 +8,7 @@ import os
 
 def load_correct_mapping():
     """Load the correct ability mapping"""
-    mapping_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/scripts/ability_tools/ability_id_mapping.txt"
+    mapping_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/scripts/ability_tools/ability_id_mapping.txt"
     
     id_to_name = {}
     
@@ -25,7 +25,7 @@ def load_correct_mapping():
 
 def load_existing_progress():
     """Load existing progress data to preserve completion status"""
-    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/extended_ability_descriptions/progress.md"
+    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/extended_ability_descriptions/progress.md"
     
     completed_abilities = {}  # name -> {character_count, etc}
     
@@ -127,7 +127,7 @@ In Progress: 0
         rows.append(row)
     
     # Read the existing file to preserve batch organization and notes
-    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/extended_ability_descriptions/progress.md"
+    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/extended_ability_descriptions/progress.md"
     
     with open(progress_path, 'r') as f:
         existing_content = f.read()
@@ -171,7 +171,7 @@ def main():
     content = generate_progress_md()
     
     # Backup the original file
-    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/extended_ability_descriptions/progress.md"
+    progress_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/extended_ability_descriptions/progress.md"
     backup_path = progress_path + ".backup"
     
     # Create backup

@@ -69,11 +69,11 @@
 #### Using Smart Scripts (Recommended)
 ```bash
 # Clean without removing tools
-./eliteredux-darky/scripts/clean_build.sh
+./absurdrealm-tools/scripts/clean_build.sh
 
 # Build with automatic tool checking
-./eliteredux-darky/scripts/smart_build.sh     # Uses 4 cores by default
-./eliteredux-darky/scripts/smart_build.sh 10  # Specify core count
+./absurdrealm-tools/scripts/smart_build.sh     # Uses 4 cores by default
+./absurdrealm-tools/scripts/smart_build.sh 10  # Specify core count
 ```
 
 #### Manual Build Commands
@@ -166,7 +166,7 @@ make tools
 
 1. **NEVER use `make clean`** - it removes tools and causes build failures
    - Always use `make mostlyclean` instead
-   - Or use the provided script: `./eliteredux-darky/scripts/clean_build.sh`
+   - Or use the provided script: `./absurdrealm-tools/scripts/clean_build.sh`
 
 2. **macOS Security (Gatekeeper)**
    - Downloaded tools trigger "may cause harm" popups

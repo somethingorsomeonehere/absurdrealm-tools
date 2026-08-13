@@ -24,9 +24,9 @@ except ImportError:
     print("Warning: PyGithub not installed. Install with: pip install PyGithub")
 
 # Configuration
-REPO_NAME = "Elite-Redux/eliteredux-source"
+REPO_NAME = "somethingorsomeonehere/absurdrealm-source"
 ISSUE_LABEL = "ability-review"
-BASE_PATH = Path("/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky")
+BASE_PATH = Path("/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools")
 ABILITIES_PATH = BASE_PATH / "knowledge" / "abilities"
 EXTENDED_DESC_PATH = BASE_PATH / "knowledge" / "extended_ability_descriptions" / "extended_descriptions.txt"
 PROGRESS_PATH = BASE_PATH / "knowledge" / "extended_ability_descriptions" / "progress.md"
@@ -99,7 +99,7 @@ Current text: "Speed Boost generates increasing velocity through battle momentum
 
 Suggested text: "Speed Boost raises Speed by one stage at the end of each turn. Does not activate on switch-in turn. Continues until reaching +6 stages. Creates powerful momentum through continuous acceleration, making fast Pokemon even faster over time. Essential for sweepers who need to outpace threats. Maximum benefit after 6 turns on field."
 ''',
-            'url': 'https://github.com/Elite-Redux/eliteredux-source/issues/999',
+            'url': 'https://github.com/somethingorsomeonehere/absurdrealm-source/issues/999',
             'created_at': datetime.now(),
             'user': 'test_user'
         }]

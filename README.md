@@ -1,4 +1,4 @@
-# EliteRedux Darky Tools
+# Absurd Realm Tools
 
 This repository contains AI-assisted development tools, scripts, and documentation for the EliteRedux project.
 
@@ -35,11 +35,11 @@ cd codex
 npm install  # First time only
 npm run dev  # Start development server
 ```
-Then open http://localhost:5173/eliteredux-darky/ in your browser.
+Then open http://localhost:5173/absurdrealm-tools/ in your browser.
 
 ### Live Website
 The documentation is automatically deployed to GitHub Pages:
-https://darkyy92.github.io/eliteredux-darky/
+https://somethingorsomeonehere.github.io/absurdrealm-tools/
 
 The site automatically rebuilds when:
 - New ability files are added to `knowledge/abilities/`
@@ -51,5 +51,5 @@ The site automatically rebuilds when:
 To use this as a submodule in the main repository:
 
 ```bash
-git submodule add https://github.com/YOUR_USERNAME/eliteredux-darky.git eliteredux-darky
+git submodule add https://github.com/YOUR_USERNAME/absurdrealm-tools.git absurdrealm-tools
 ```# absurdrealm-tools

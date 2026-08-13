@@ -67,7 +67,7 @@ def main():
     update_mode = '--update' in sys.argv
     
     # Path to abilities directory
-    abilities_dir = Path("/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/knowledge/abilities")
+    abilities_dir = Path("/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/knowledge/abilities")
     
     # Lists to store results
     too_short = []

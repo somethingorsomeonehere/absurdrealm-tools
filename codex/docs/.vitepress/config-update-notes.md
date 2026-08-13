@@ -15,7 +15,7 @@
 
 1. Install the gray-matter dependency:
    ```bash
-   cd eliteredux-darky/codex
+   cd absurdrealm-tools/codex
    npm install gray-matter
    ```
 

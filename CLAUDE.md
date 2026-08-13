@@ -63,7 +63,7 @@ make -jX
 make modern -jX
 
 # macOS Build Instructions (TESTED AND WORKING!)
-# See eliteredux-darky/knowledge/macos_compilation.md for complete guide
+# See absurdrealm-tools/knowledge/macos_compilation.md for complete guide
 # Key commands:
 xattr -d com.apple.quarantine tools/poryscript/poryscript  # Remove security warning (one-time)
 make mostlyclean  # NEVER use 'make clean' - it removes tools!
@@ -75,9 +75,9 @@ make mostlyclean
 make -jX
 
 # Option 2: Use the provided scripts
-./eliteredux-darky/scripts/clean_build.sh  # Cleans ROM files, keeps tools
-./eliteredux-darky/scripts/smart_build.sh  # Auto-builds tools if needed, then ROM
-./eliteredux-darky/scripts/smart_build.sh 10  # Specify core count
+./absurdrealm-tools/scripts/clean_build.sh  # Cleans ROM files, keeps tools
+./absurdrealm-tools/scripts/smart_build.sh  # Auto-builds tools if needed, then ROM
+./absurdrealm-tools/scripts/smart_build.sh 10  # Specify core count
 
 # Option 3: Full clean (removes everything including tools)
 make clean  # This removes tools too - avoid unless necessary
@@ -109,8 +109,8 @@ Many data files in this project are extremely large (e.g., `src/data/trainers.h`
    - Create a Python script to make the necessary changes
    - Run the script and verify the output
    - This approach is more reliable than direct editing
-   - **IMPORTANT**: Put python scripts in the `eliteredux-darky/scripts/` directory (not in `tools/`)
-   - Example directories: `eliteredux-darky/scripts/trainer_tools/`, `eliteredux-darky/scripts/wiki_tools/`
+   - **IMPORTANT**: Put python scripts in the `absurdrealm-tools/scripts/` directory (not in `tools/`)
+   - Example directories: `absurdrealm-tools/scripts/trainer_tools/`, `absurdrealm-tools/scripts/wiki_tools/`
 
 2. **Read files strategically**:
    - Use grep/search to find specific sections
@@ -191,10 +191,10 @@ The project uses a sophisticated proto-based codegen system:
 - **Strings**: `src/strings.c` and various other locations
 
 ### Script Organization
-- **Python Scripts**: All Python scripts go in `eliteredux-darky/scripts/` directory
-- **Trainer Scripts**: `eliteredux-darky/scripts/trainer_tools/`
-- **Wiki Scripts**: `eliteredux-darky/scripts/wiki_tools/`
-- **Ability Scripts**: `eliteredux-darky/scripts/ability_tools/`
+- **Python Scripts**: All Python scripts go in `absurdrealm-tools/scripts/` directory
+- **Trainer Scripts**: `absurdrealm-tools/scripts/trainer_tools/`
+- **Wiki Scripts**: `absurdrealm-tools/scripts/wiki_tools/`
+- **Ability Scripts**: `absurdrealm-tools/scripts/ability_tools/`
 - **Never put Python scripts in `tools/`** - that directory is only for C programs that need compilation
 - **Clean up temporary scripts**: After completing a task, delete one-off Python scripts that are no longer needed
   - Keep only reusable tools and utilities
@@ -202,16 +202,16 @@ The project uses a sophisticated proto-based codegen system:
   - This prevents clutter and confusion for future work
 
 ### Project Planning and Organization
-- **Plans Directory**: Complex tasks and projects should have planning documents in `eliteredux-darky/plans/`
+- **Plans Directory**: Complex tasks and projects should have planning documents in `absurdrealm-tools/plans/`
 - **Format**: Use markdown files (`.md`) for planning documents
-- **Organization**: For large multi-file projects, create a subfolder (e.g., `eliteredux-darky/plans/extended_ability_descriptions/`)
+- **Organization**: For large multi-file projects, create a subfolder (e.g., `absurdrealm-tools/plans/extended_ability_descriptions/`)
 - **Master Plan**: Large projects should have a `MASTER_PLAN.md` that links to other documents
 - **Content**: Include overview, requirements, implementation steps, and progress tracking
 - **When to use**: For any multi-step project that requires coordination or tracking
-- **Continuation**: When told to "continue working on X", check `eliteredux-darky/plans/X/` folder first
+- **Continuation**: When told to "continue working on X", check `absurdrealm-tools/plans/X/` folder first
 
 ### Testing Approach
-- Python test files in `eliteredux-darky/scripts/ability_tools/` (e.g., `test_generate_progress.py`)
+- Python test files in `absurdrealm-tools/scripts/ability_tools/` (e.g., `test_generate_progress.py`)
 - No formal unit test framework for the C codebase
 - Manual testing through ROM builds and gameplay
 - Individual validation scripts for specific tools
@@ -253,12 +253,12 @@ The project uses a sophisticated proto-based codegen system:
 - The `upcoming` branch is the active development branch
 - Many files are auto-generated - be careful about which files to edit
 - When in doubt about file size, check before attempting to read/edit directly
-- The build system attempts to compile all directories under `tools/` - use `eliteredux-darky/scripts/` for Python scripts instead
+- The build system attempts to compile all directories under `tools/` - use `absurdrealm-tools/scripts/` for Python scripts instead
 - GitHub Actions automatically deploys documentation to GitHub Pages when changes are pushed to main
 
 ## Knowledge Base
 
-Detailed documentation about specific systems can be found in the `eliteredux-darky/knowledge/` directory:
+Detailed documentation about specific systems can be found in the `absurdrealm-tools/knowledge/` directory:
 - **macos_compilation.md** - Complete guide for building on macOS, including troubleshooting
 - **difficulty_system.md** - How the 4-tier difficulty system works
 - **adding_trainers.md** - Guide for adding new trainers and parties
@@ -283,7 +283,7 @@ Detailed documentation about specific systems can be found in the `eliteredux-da
 
 ## Memory: Learning and Knowledge Management
 - When you learn new stuff, especially when you had to search a lot to understand how something works and is connected, don't hesitate to write into CLAUDE.md so next time it will be much faster > like training the AI so it gets better and better!
-- **IMPORTANT**: Create detailed documentation in the `eliteredux-darky/knowledge/` directory for complex topics:
+- **IMPORTANT**: Create detailed documentation in the `absurdrealm-tools/knowledge/` directory for complex topics:
   - Platform-specific guides (e.g., `macos_compilation.md`)
   - System implementations (existing: `difficulty_system.md`, `wiki_system.md`, etc.)
   - Problem solutions and workarounds
@@ -296,7 +296,7 @@ The in-game wiki provides comprehensive help content accessible from the Start M
 
 ### Wiki Content Structure
 - **Content Source**: `docs/er-wiki-google-docs.md` - Markdown file containing all wiki content
-- **Parser Tool**: `eliteredux-darky/scripts/wiki_tools/parse_wiki_markdown.py` - Converts markdown to protobuf format
+- **Parser Tool**: `absurdrealm-tools/scripts/wiki_tools/parse_wiki_markdown.py` - Converts markdown to protobuf format
 - **Protobuf Data**: `proto/HelpArticles.textproto` - Generated wiki content in protobuf format
 - **Generated Code**: `include/generated/data/text/help_articles.h` - C header with final wiki data
 
@@ -309,7 +309,7 @@ The in-game wiki provides comprehensive help content accessible from the Start M
 
 2. Run the parser:
    ```bash
-   python3 eliteredux-darky/scripts/wiki_tools/parse_wiki_markdown.py
+   python3 absurdrealm-tools/scripts/wiki_tools/parse_wiki_markdown.py
    ```
 
 3. Rebuild the codegen tools:
@@ -329,7 +329,7 @@ The in-game wiki provides comprehensive help content accessible from the Start M
 ## Documentation Site (Codex)
 
 Elite Redux has a VitePress-based documentation site for abilities:
-- **Location**: `eliteredux-darky/codex/`
+- **Location**: `absurdrealm-tools/codex/`
 - **Local Development**: `npm run dev` in the codex directory
 - **Build**: `npm run build`
 - **Auto-deployment**: GitHub Actions deploys to GitHub Pages on push to main
@@ -403,7 +403,7 @@ Understanding the data flow prevents future conflicts:
 
 ## Submodule Context
 
-This `eliteredux-darky` directory is a submodule within the main `eliteredux-source` project. The parent directory structure provides:
+This `absurdrealm-tools` directory is a submodule within the main `absurdrealm-source` project. The parent directory structure provides:
 - Main ROM source code and build system
 - Proto files for data generation
 - Tools for compilation

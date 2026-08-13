@@ -108,7 +108,7 @@ To maintain high-quality documentation, ability descriptions should:
 
 Experienced contributors can create pull requests directly:
 
-1. **Fork the repository**: `https://github.com/darkyy92/eliteredux-darky`
+1. **Fork the repository**: `https://github.com/somethingorsomeonehere/absurdrealm-tools`
 2. **Edit the source files**:
    - `knowledge/abilities/[id]_[name].md`
    - `knowledge/extended_ability_descriptions/extended_descriptions.txt`
@@ -119,7 +119,7 @@ Experienced contributors can create pull requests directly:
 
 ```
 eliteredux-source/
-├── eliteredux-darky/
+├── absurdrealm-tools/
 │   ├── knowledge/
 │   │   ├── abilities/           # Individual ability files
 │   │   └── extended_ability_descriptions/

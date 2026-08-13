@@ -28,7 +28,7 @@ def extract_abilities_from_proto():
 
 def save_mapping(abilities):
     """Save the mapping to a file for reference"""
-    output_path = "/Users/joel/Github/eliteredux/eliteredux-source/eliteredux-darky/scripts/ability_tools/ability_id_mapping.txt"
+    output_path = "/Users/joel/Github/eliteredux/eliteredux-source/absurdrealm-tools/scripts/ability_tools/ability_id_mapping.txt"
     
     with open(output_path, 'w') as f:
         f.write("# Complete Ability ID Mapping from proto/AbilityEnum.proto\n")
